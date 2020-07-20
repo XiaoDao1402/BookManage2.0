@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\01.基础平台\JW.Base\JW.Base.csproj" />
+    <ProjectReference Include="..\..\02.数据逻辑层\JW.Data.Dal\JW.Data.Dal.csproj" />
+    <ProjectReference Include="..\..\02.数据逻辑层\JW.Data.Entity\JW.Data.Entity.csproj" />
+  </ItemGroup>
+
+</Project>

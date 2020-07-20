@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JW.Data.Entity</name>
+    </assembly>
+    <members>
+        <member name="T:JW.Data.Entity.Admin.AdminEntity">
+            <summary>
+            管理员表
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Admin.AdminEntity.AdminId">
+            <summary>
+            管理员id
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Admin.AdminEntity.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Admin.AdminEntity.Account">
+            <summary>
+            账号
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Admin.AdminEntity.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Admin.AdminEntity.CreateDate">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Admin.AdminEntity.ModifyDate">
+            <summary>
+            修改日期
+            </summary>
+        </member>
+    </members>
+</doc>

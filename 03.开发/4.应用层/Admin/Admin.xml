@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Admin</name>
+    </assembly>
+    <members>
+        <member name="T:Admin.Controllers.Admin.AdminController">
+            <summary>
+            管理员控制器
+            </summary>
+        </member>
+        <member name="M:Admin.Controllers.Admin.AdminController.CreateAdmin(JW.Data.Entity.Admin.AdminEntity)">
+            <summary>
+            创建管理员
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Admin.Controllers.Admin.AdminController.ModifyAdmin(System.Int32,JW.Data.Entity.Admin.AdminEntity)">
+            <summary>
+            修改管理员
+            </summary>
+            <param name="adminId"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Admin.Controllers.Admin.AdminController.QueryAdmins(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            查询管理员
+            </summary>
+            <param name="name"></param>
+            <param name="current "></param>
+            <param name="pageSize"></param>
+            <param name="sorter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Admin.Controllers.Admin.AdminController.DeleteAdmin(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            删除管理员
+            </summary>
+            <param name="adminIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Admin.Controllers.Admin.AdminController.ResetPassword(System.Int32)">
+            <summary>
+            重置密码
+            </summary>
+            <param name="adminId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Admin.Controllers.Admin.AdminController.ModifyAdminInfo(System.Int32,JW.Data.Entity.Admin.AdminEntity)">
+            <summary>
+            修改个人信息
+            </summary>
+            <param name="adminId"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Admin.Controllers.BaseController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Admin.Controllers.BaseController.BLL``1">
+            <summary>
+            业务层
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Admin.Controllers.BaseController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Admin.Controllers.BaseController.SetSession(System.String,System.String)">
+            <summary>
+            设置Session
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:Admin.Controllers.BaseController.GetSession(System.String)">
+            <summary>
+            获取Session
+            </summary>
+            <param name="key">键</param>
+            <returns>返回对应的值</returns>
+        </member>
+        <member name="M:Admin.Controllers.BaseController.ClearSession">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Admin.Controllers.BaseController.GetCurrentUserId">
+            <summary>
+            获取当前用户ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Admin.Controllers.BaseController.CurrentAdmin">
+            <summary>
+            当前管理员
+            </summary>
+        </member>
+        <member name="M:Admin.Controllers.BaseController.GetJwtToken(JW.Base.Security.SessionUser)">
+            <summary>
+            获取token
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Admin.Controllers.BaseController.DisponseJwtToken">
+            <summary>
+            注销登陆
+            </summary>
+        </member>
+        <member name="T:Admin.Controllers.Security.SecurityController">
+            <summary>
+            安全控制器
+            </summary>
+        </member>
+        <member name="M:Admin.Controllers.Security.SecurityController.Login(System.String,System.String)">
+            <summary>
+            登陆
+            </summary>
+            <param name="account">账户</param>
+            <param name="password">密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Admin.Controllers.Security.SecurityController.Logout">
+            <summary>
+            注销
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Admin.Controllers.Security.SecurityController.CurrentUser">
+            <summary>
+            当前用户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Admin.Model.LoginModel">
+            <summary>
+            登录model
+            </summary>
+        </member>
+        <member name="P:Admin.Model.LoginModel.Admin">
+            <summary>
+            管理员
+            </summary>
+        </member>
+        <member name="P:Admin.Model.LoginModel.Token">
+            <summary>
+            令牌
+            </summary>
+        </member>
+        <member name="T:Admin.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Admin.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Admin.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Admin.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Admin.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
