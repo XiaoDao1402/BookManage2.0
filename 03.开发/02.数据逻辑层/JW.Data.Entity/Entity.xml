@@ -69,5 +69,10 @@
              修改时间
             </summary>
         </member>
+        <member name="P:JW.Data.Entity.Category.CategoryEntity.Parent">
+            <summary>
+            上级分类
+            </summary>
+        </member>
     </members>
 </doc>

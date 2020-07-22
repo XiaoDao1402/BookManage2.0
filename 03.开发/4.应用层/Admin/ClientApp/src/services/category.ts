@@ -1,6 +1,9 @@
 import { BookCategoryEntity } from '@/models/category';
 import request from '@/utils/request';
 
+const { post } = request;
+
+// 查询图书分类
 export async function queryCategory(
   params?: TableListParams,
 ): Promise<RequestData<BookCategoryEntity>> {
@@ -12,4 +15,11 @@ export async function queryCategory(
     return response.value;
   }
   return { success: false, data: [] };
+}
+
+// 批量删除图书分类
+export async function deleteCategory(
+  bookCategoryIds: number[],
+): ApiModelPromise<BookCategoryEntity> {
+  return post('/api/Category/DeleteCategory', { data: bookCategoryIds });
 }

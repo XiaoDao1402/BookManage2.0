@@ -129,6 +129,13 @@
             <param name="pageSize"></param>
             <returns></returns>
         </member>
+        <member name="M:Admin.Controllers.Category.CategoryController.DeleteCategory(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            批量删除图书分类
+            </summary>
+            <param name="bookCategoryIds">要删除的图书分类的集合</param>
+            <returns></returns>
+        </member>
         <member name="T:Admin.Controllers.Security.SecurityController">
             <summary>
             安全控制器

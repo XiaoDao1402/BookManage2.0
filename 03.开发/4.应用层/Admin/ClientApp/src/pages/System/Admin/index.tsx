@@ -18,7 +18,7 @@ import { PlusOutlined } from '@ant-design/icons';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import ProTable from '@ant-design/pro-table';
 import { ActionType, ProColumns } from '@ant-design/pro-table/lib/Table';
-import { Avatar, Button, Divider, Form, Input, message, Tag } from 'antd';
+import { Button, Divider, Form, Input, message } from 'antd';
 import { SorterResult } from 'antd/lib/table/interface';
 import { connect } from 'dva';
 import React, { useRef, useState } from 'react';

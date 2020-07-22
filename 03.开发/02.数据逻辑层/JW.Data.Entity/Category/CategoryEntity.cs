@@ -38,5 +38,11 @@ namespace JW.Data.Entity.Category
         /// </summary>
         public DateTime ModifyDate { get; set; }
 
+        /// <summary>
+        /// 上级分类
+        /// </summary>
+        [SugarColumn(IsIgnore = true)]
+        public CategoryEntity Parent { get; set; }
+
     }
 }

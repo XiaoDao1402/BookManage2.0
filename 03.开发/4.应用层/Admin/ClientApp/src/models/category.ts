@@ -4,6 +4,7 @@ export interface BookCategoryEntity {
   parentId?: number;
   createDate?: Date;
   modifyDate?: Date;
+  parent?: BookCategoryEntity;
 }
 
 export interface BookCategoryState {}
