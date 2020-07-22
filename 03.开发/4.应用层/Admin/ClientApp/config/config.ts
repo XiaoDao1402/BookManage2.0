@@ -127,6 +127,19 @@ export default {
                 },
               ],
             },
+            {
+              name: 'book',
+              path: '/book',
+              icon: 'FileSearchOutlined',
+              routes: [
+                {
+                  name: 'category',
+                  path: '/book/category',
+                  icon: 'FileSearchOutlined',
+                  component: './Book/Category',
+                },
+              ],
+            },
           ],
         },
         {

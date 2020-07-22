@@ -35,4 +35,8 @@ export default {
   'menu.system.historylog': '系统日志',
   'menu.system.app': '应用设置',
   'menu.system.admin': '管理员管理',
+
+  'menu.book': '图书管理',
+  'menu.book.list': '图书列表',
+  'menu.book.category': '图书分类',
 };

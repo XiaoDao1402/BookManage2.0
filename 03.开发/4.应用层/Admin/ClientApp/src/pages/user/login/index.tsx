@@ -48,7 +48,6 @@ const Login: React.FC<LoginProps> = props => {
           {status === 'error' && loginType === 'account' && !submitting && (
             <LoginMessage content="账户或密码错误" />
           )}
-
           <UserName
             name="userName"
             placeholder="管理员账号"

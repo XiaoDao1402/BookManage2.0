@@ -115,6 +115,20 @@
             注销登陆
             </summary>
         </member>
+        <member name="T:Admin.Controllers.Category.CategoryController">
+            <summary>
+            图书分类控制器
+            </summary>
+        </member>
+        <member name="M:Admin.Controllers.Category.CategoryController.QueryCategory(System.String,System.Int32,System.Int32)">
+            <summary>
+            查询图书分类
+            </summary>
+            <param name="name"></param>
+            <param name="current"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
         <member name="T:Admin.Controllers.Security.SecurityController">
             <summary>
             安全控制器
