@@ -39,37 +39,62 @@
             修改日期
             </summary>
         </member>
-        <member name="T:JW.Data.Entity.Category.CategoryEntity">
+        <member name="T:JW.Data.Entity.Category.BookCategoryEntity">
             <summary>
             图书分类实体
             </summary>
         </member>
-        <member name="P:JW.Data.Entity.Category.CategoryEntity.BookCategoryId">
+        <member name="P:JW.Data.Entity.Category.BookCategoryEntity.BookCategoryId">
             <summary>
             图书分类id
             </summary>
         </member>
-        <member name="P:JW.Data.Entity.Category.CategoryEntity.Name">
+        <member name="P:JW.Data.Entity.Category.BookCategoryEntity.Name">
             <summary>
             图书分类名称
             </summary>
         </member>
-        <member name="P:JW.Data.Entity.Category.CategoryEntity.ParentId">
+        <member name="P:JW.Data.Entity.Category.BookCategoryEntity.ParentId">
             <summary>
             父id
             </summary>
         </member>
-        <member name="P:JW.Data.Entity.Category.CategoryEntity.CreateDate">
+        <member name="P:JW.Data.Entity.Category.BookCategoryEntity.CreateDate">
             <summary>
             创建时间
             </summary>
         </member>
-        <member name="P:JW.Data.Entity.Category.CategoryEntity.ModifyDate">
+        <member name="P:JW.Data.Entity.Category.BookCategoryEntity.ModifyDate">
             <summary>
              修改时间
             </summary>
         </member>
-        <member name="P:JW.Data.Entity.Category.CategoryEntity.Parent">
+        <member name="P:JW.Data.Entity.Category.BookCategoryEntity.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Category.BookCategoryEntity.Value">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Category.BookCategoryEntity.Children">
+            <summary>
+            子数据
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Category.BookCategoryEntity.Key">
+            <summary>
+            键值
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Category.BookCategoryEntity.Label">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Category.BookCategoryEntity.Parent">
             <summary>
             上级分类
             </summary>

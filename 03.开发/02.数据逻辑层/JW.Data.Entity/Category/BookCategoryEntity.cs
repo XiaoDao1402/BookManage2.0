@@ -11,11 +11,12 @@ namespace JW.Data.Entity.Category
     /// </summary>
     [Name("图书分类实体")]
     [SugarTable("t_book_category")]
-    public class CategoryEntity
+    public class BookCategoryEntity
     {
         /// <summary>
         /// 图书分类id
         /// </summary>
+        [SugarColumn(IsPrimaryKey =true,IsIdentity =true)]
         public int BookCategoryId { get; set; }
 
         /// <summary>
@@ -38,11 +39,45 @@ namespace JW.Data.Entity.Category
         /// </summary>
         public DateTime ModifyDate { get; set; }
 
+        #region
+
+        /// <summary>
+        /// 标题
+        /// </summary>
+        [SugarColumn(IsIgnore =true)]
+        public string Title { get; set; }
+
+        /// <summary>
+        /// 数据
+        /// </summary>
+        [SugarColumn(IsIgnore =true)]
+        public int Value { get; set; }
+
+        /// <summary>
+        /// 子数据
+        /// </summary>
+        [SugarColumn(IsIgnore =true)]
+        public List<BookCategoryEntity> Children { get; set; }
+
+        /// <summary>
+        /// 键值
+        /// </summary>
+        [SugarColumn(IsIgnore =true)]
+        public int Key { get; set; }
+
+        /// <summary>
+        /// Name
+        /// </summary>
+        [SugarColumn(IsIgnore =true)]
+        public string Label { get; set; }
+
+        #endregion
+
         /// <summary>
         /// 上级分类
         /// </summary>
         [SugarColumn(IsIgnore = true)]
-        public CategoryEntity Parent { get; set; }
+        public BookCategoryEntity Parent { get; set; }
 
     }
 }

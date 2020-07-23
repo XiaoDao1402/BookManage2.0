@@ -115,12 +115,12 @@
             注销登陆
             </summary>
         </member>
-        <member name="T:Admin.Controllers.Category.CategoryController">
+        <member name="T:Admin.Controllers.Category.BookCategoryController">
             <summary>
             图书分类控制器
             </summary>
         </member>
-        <member name="M:Admin.Controllers.Category.CategoryController.QueryCategory(System.String,System.Int32,System.Int32)">
+        <member name="M:Admin.Controllers.Category.BookCategoryController.QueryBookCategory(System.String,System.Int32,System.Int32)">
             <summary>
             查询图书分类
             </summary>
@@ -129,11 +129,24 @@
             <param name="pageSize"></param>
             <returns></returns>
         </member>
-        <member name="M:Admin.Controllers.Category.CategoryController.DeleteCategory(System.Collections.Generic.List{System.Int32})">
+        <member name="M:Admin.Controllers.Category.BookCategoryController.QueryBookCategoryTree">
+            <summary>
+            查询所有图书分类（用于树形下拉列表）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Admin.Controllers.Category.BookCategoryController.DeleteBookCategory(System.Collections.Generic.List{System.Int32})">
             <summary>
             批量删除图书分类
             </summary>
             <param name="bookCategoryIds">要删除的图书分类的集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:Admin.Controllers.Category.BookCategoryController.AddBookCategory(JW.Data.Entity.Category.BookCategoryEntity)">
+            <summary>
+            新增图书分类
+            </summary>
+            <param name="entity"></param>
             <returns></returns>
         </member>
         <member name="T:Admin.Controllers.Security.SecurityController">

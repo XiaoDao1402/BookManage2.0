@@ -133,10 +133,10 @@ export default {
               icon: 'FileSearchOutlined',
               routes: [
                 {
-                  name: 'category',
-                  path: '/book/category',
+                  name: 'bookcategory',
+                  path: '/book/bookcategory',
                   icon: 'FileSearchOutlined',
-                  component: './Book/Category',
+                  component: './Book/BookCategory',
                 },
               ],
             },
