@@ -17,7 +17,7 @@ export async function queryBookCategory(
   return { success: false, data: [] };
 }
 
-// 查询所有图书分类（用于下拉列表）
+// 查询所有图书分类（用于树形下拉列表）
 export async function queryBookCategoryTree() {
   return request('/api/BookCategory/QueryBookCategoryTree');
 }
@@ -34,4 +34,12 @@ export async function addBookCategory(
   entity: BookCategoryEntity,
 ): ApiModelPromise<BookCategoryEntity> {
   return post('/api/BookCategory/AddBookCategory', { data: entity });
+}
+
+// 修改图书分类
+export async function updateBookCategory(
+  bookCategoryId: number,
+  entity: BookCategoryEntity,
+): ApiModelPromise<BookCategoryEntity> {
+  return post(`/api/BookCategory/UpdateBookCategory/${bookCategoryId}`, { data: entity });
 }

@@ -149,6 +149,14 @@
             <param name="entity"></param>
             <returns></returns>
         </member>
+        <member name="M:Admin.Controllers.Category.BookCategoryController.UpdateBookCategory(System.Int32,JW.Data.Entity.Category.BookCategoryEntity)">
+            <summary>
+            修改图书分类
+            </summary>
+            <param name="bookCategoryId"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
         <member name="T:Admin.Controllers.Security.SecurityController">
             <summary>
             安全控制器

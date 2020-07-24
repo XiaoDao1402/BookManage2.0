@@ -9,16 +9,17 @@ import {
   deleteBookCategory,
   addBookCategory,
   queryBookCategoryTree,
+  updateBookCategory,
 } from '@/services/bookcategory';
 import Authorized from '@/utils/Authorized';
-import { Button, message, Select, TreeSelect } from 'antd';
-import { PlusOutlined, EditFilled } from '@ant-design/icons';
+import { Button, message, TreeSelect, Input, Divider } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
 import EditForm from '@/components/EditForm';
 import FormItem from 'antd/lib/form/FormItem';
 
 export interface BookProps {}
 
-const BookList: React.FC<BookProps> = () => {
+const BookCategoryList: React.FC<BookProps> = () => {
   const actionRef = useRef<ActionType>();
   const [createModalVisible, handleModalVisible] = useState<boolean>(false);
   const [editFormValues, setEditFormValues] = useState<BookCategoryEntity>({});
@@ -32,7 +33,6 @@ const BookList: React.FC<BookProps> = () => {
     if (category && Array.isArray(category)) {
       id = [...category];
     }
-
     const response = await deleteBookCategory(id);
     if (response.result && response.result.success) {
       message.success(response.result.message || '删除成功');
@@ -90,13 +90,25 @@ const BookList: React.FC<BookProps> = () => {
       render: (_, record) => (
         <>
           <Authorized authority="" noMatch={null}>
-            <a>修改</a>
+            <a
+              onClick={() => {
+                handleModalVisible(true);
+                setEditFormValues(record);
+              }}
+            >
+              修改
+            </a>
           </Authorized>
+          <>
+            <Authorized authority="" noMatch={null}>
+              <Divider type="vertical" />
+              <a onClick={() => handleDelete(record.bookCategoryId!)}>删除</a>
+            </Authorized>
+          </>
         </>
       ),
     },
   ];
-  console.log('aaaa', treeData);
   return (
     <PageHeaderWrapper>
       <ProTable<BookCategoryEntity>
@@ -146,12 +158,13 @@ const BookList: React.FC<BookProps> = () => {
           values={editFormValues}
           onSubmit={async (value: BookCategoryEntity) => {
             let response: ApiModel<BookCategoryEntity>;
-            // if (value.adminId && value.adminId >= 10000) {
-            //   // 修改
-            // } else {
-            // 新增
-            response = await addBookCategory(value);
-            // }
+            if (value.bookCategoryId && value.bookCategoryId >= 10000) {
+              // 修改
+              response = await updateBookCategory(value.bookCategoryId, value);
+            } else {
+              // 新增
+              response = await addBookCategory(value);
+            }
 
             if (response.result && response.result.success) {
               handleModalVisible(false);
@@ -174,10 +187,14 @@ const BookList: React.FC<BookProps> = () => {
             label="分类名称"
             rules={[{ required: true, message: '分类名称为必填项' }]}
           >
-            <input placeholder="请输入分类名称"></input>
+            <Input placeholder="请输入分类名称"></Input>
           </FormItem>
-          <FormItem name="parent" label="上级分类">
-            <TreeSelect treeData={treeData} placeholder="请选择上级类型"></TreeSelect>
+          <FormItem name="parentId" label="上级分类">
+            <TreeSelect
+              treeData={treeData}
+              placeholder="请选择上级类型"
+              allowClear={true}
+            ></TreeSelect>
           </FormItem>
         </EditForm>
       )}
@@ -185,4 +202,4 @@ const BookList: React.FC<BookProps> = () => {
   );
 };
 
-export default connect()(BookList);
+export default connect()(BookCategoryList);

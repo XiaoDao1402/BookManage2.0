@@ -37,6 +37,6 @@ export default {
   'menu.system.admin': '管理员管理',
 
   'menu.book': '图书管理',
-  // 'menu.book.list': '图书列表',
   'menu.book.bookcategory': '图书分类',
+  'menu.book.booklist': '图书列表',
 };

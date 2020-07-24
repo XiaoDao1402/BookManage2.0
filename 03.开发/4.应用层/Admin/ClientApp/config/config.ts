@@ -138,6 +138,12 @@ export default {
                   icon: 'FileSearchOutlined',
                   component: './Book/BookCategory',
                 },
+                {
+                  name: 'booklist',
+                  path: 'book/booklist',
+                  icon: 'FileSearchOutlined',
+                  component: './Book/BookList',
+                },
               ],
             },
           ],
