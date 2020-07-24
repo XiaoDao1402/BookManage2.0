@@ -99,5 +99,105 @@
             上级分类
             </summary>
         </member>
+        <member name="T:JW.Data.Entity.Models.PageQueryEntity">
+            <summary>
+            条件实体
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Models.PageQueryEntity.BookId">
+            <summary>
+            图书id
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Models.PageQueryEntity.Name">
+            <summary>
+            图书名称
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Models.PageQueryEntity.BookCategoryId">
+            <summary>
+            图书分类id
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Models.PageQueryEntity.Current">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Models.PageQueryEntity.PageSize">
+            <summary>
+            每页数据条数
+            </summary>
+        </member>
+        <member name="T:JW.Buss.BLL.Book.BookEntity">
+            <summary>
+            图书实体
+            </summary>
+        </member>
+        <member name="P:JW.Buss.BLL.Book.BookEntity.BookId">
+            <summary>
+            图书id
+            </summary>
+        </member>
+        <member name="P:JW.Buss.BLL.Book.BookEntity.Name">
+            <summary>
+            图书名称
+            </summary>
+        </member>
+        <member name="P:JW.Buss.BLL.Book.BookEntity.BookCategoryId">
+            <summary>
+            图书分类id
+            </summary>
+        </member>
+        <member name="P:JW.Buss.BLL.Book.BookEntity.CoverImage">
+            <summary>
+            图书封面
+            </summary>
+        </member>
+        <member name="P:JW.Buss.BLL.Book.BookEntity.Price">
+            <summary>
+            图书价格
+            </summary>
+        </member>
+        <member name="P:JW.Buss.BLL.Book.BookEntity.BorrowNum">
+            <summary>
+            借书次数
+            </summary>
+        </member>
+        <member name="P:JW.Buss.BLL.Book.BookEntity.TotalStockCount">
+            <summary>
+            总库存
+            </summary>
+        </member>
+        <member name="P:JW.Buss.BLL.Book.BookEntity.SurplusStockCount">
+            <summary>
+            剩余库存
+            </summary>
+        </member>
+        <member name="P:JW.Buss.BLL.Book.BookEntity.AdminId">
+            <summary>
+            管理员id
+            </summary>
+        </member>
+        <member name="P:JW.Buss.BLL.Book.BookEntity.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:JW.Buss.BLL.Book.BookEntity.ModifyDate">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:JW.Buss.BLL.Book.BookEntity.Admin">
+            <summary>
+            管理员
+            </summary>
+        </member>
+        <member name="P:JW.Buss.BLL.Book.BookEntity.BookCategory">
+            <summary>
+            图书分类
+            </summary>
+        </member>
     </members>
 </doc>

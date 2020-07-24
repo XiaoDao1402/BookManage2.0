@@ -1,4 +1,4 @@
---管理员表
+﻿--管理员表
 if Exists(select top 1 * from sysObjects where Id=OBJECT_ID(N't_admin') and xtype='U')
     drop table t_admin;
 create table t_admin(

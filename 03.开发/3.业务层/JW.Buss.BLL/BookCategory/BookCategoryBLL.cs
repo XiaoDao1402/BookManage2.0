@@ -17,7 +17,7 @@ namespace JW.Buss.BLL.Category
         #region 查询
 
         /// <summary>
-        /// 获取所有图书分类
+        /// 查询图书分类
         /// </summary>
         /// <param name="name">分类名</param>
         /// <param name="total">总数据条数</param>
@@ -112,8 +112,8 @@ namespace JW.Buss.BLL.Category
                 result.ForEach(item =>
                 {
                     item.Title = item.Label =  item.Name;
-                    item.Value = item.Key = item.ParentId;
-                    item.Children = QueryCategoryChildren(result, item.BookCategoryId);
+                    item.Value = item.Key = item.BookCategoryId;
+                    item.Children = QueryCategoryChildren(list, item.BookCategoryId);
                 });
                 return result;
             }
@@ -139,7 +139,7 @@ namespace JW.Buss.BLL.Category
                 children.ForEach(item =>
                 {
                     item.Title = item.Label= item.Name;
-                    item.Value = item.Key = item.ParentId;
+                    item.Value = item.Key = item.BookCategoryId;
                     item.Children = QueryCategoryChildren(list, item.BookCategoryId);
                 });
 

@@ -115,6 +115,18 @@
             注销登陆
             </summary>
         </member>
+        <member name="T:Admin.Controllers.Book.BookController">
+            <summary>
+            图书控制器
+            </summary>
+        </member>
+        <member name="M:Admin.Controllers.Book.BookController.QueryBook(JW.Data.Entity.Models.PageQueryEntity)">
+            <summary>
+            查询图书
+            </summary>
+            <param name="entity">查询参数实体</param>
+            <returns></returns>
+        </member>
         <member name="T:Admin.Controllers.Category.BookCategoryController">
             <summary>
             图书分类控制器
