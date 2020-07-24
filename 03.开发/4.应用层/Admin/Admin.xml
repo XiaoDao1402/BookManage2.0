@@ -182,6 +182,39 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Admin.Controllers.Upload.UploadController">
+            <summary>
+            文件上传
+            </summary>
+        </member>
+        <member name="M:Admin.Controllers.Upload.UploadController.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Admin.Controllers.Upload.UploadController.Post(System.String,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            上传文件接口
+            </summary>
+            <param name="fileType">文件类型 image 或者 video</param>
+            <param name="file">文件</param>
+            <returns></returns>
+        </member>
+        <member name="T:Admin.Model.FileModel">
+            <summary>
+            文件model
+            </summary>
+        </member>
+        <member name="P:Admin.Model.FileModel.FileName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:Admin.Model.FileModel.Url">
+            <summary>
+            图片路径
+            </summary>
+        </member>
         <member name="T:Admin.Model.LoginModel">
             <summary>
             登录model
