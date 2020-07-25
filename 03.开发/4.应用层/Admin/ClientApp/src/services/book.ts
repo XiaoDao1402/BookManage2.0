@@ -4,6 +4,11 @@ import request from '@/utils/request';
 const { post } = request;
 
 // 查询图书
-export async function queryBook(params?: TableListParams): Promise<RequestData<BookEntity>> {
-  return post('/api/Book/QueryBook');
+export async function queryBook(data?: TableListParams): Promise<RequestData<BookEntity>> {
+  const response = await post('/api/Book/QueryBook', { data });
+  if (typeof response.value != undefined) {
+    response.value.success = response.result.success;
+    return response.value;
+  }
+  return { success: false, data: [] };
 }

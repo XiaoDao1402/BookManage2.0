@@ -16,7 +16,7 @@ namespace JW.Data.Entity.Models
         /// <summary>
         /// 图书id
         /// </summary>
-        public int BookId { get; set; }
+        public int? BookId { get; set; }
 
         /// <summary>
         /// 图书名称
@@ -26,7 +26,7 @@ namespace JW.Data.Entity.Models
         /// <summary>
         /// 图书分类id
         /// </summary>
-        public int BookCategoryId { get; set; }
+        public int? BookCategoryId { get; set; }
 
         #endregion
 

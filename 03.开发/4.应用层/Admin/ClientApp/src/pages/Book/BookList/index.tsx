@@ -1,21 +1,37 @@
 import { ProColumns } from '@ant-design/pro-table/lib/Table';
 import { BookEntity } from '@/models/book';
 import { connect } from 'dva';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Authorized from '@/utils/Authorized';
-import { Divider } from 'antd';
+import { Divider, TreeSelect } from 'antd';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
 import ProTable from '@ant-design/pro-table';
 import { queryBook } from '@/services/book';
+import FormItem from 'antd/lib/form/FormItem';
+import { queryBookCategoryTree } from '@/services/bookcategory';
 
 export interface BookProps {}
 
 const BookList: React.FC<BookProps> = () => {
+  const [treeData, setTreeDate] = useState();
+
+  const handleQueryCategoryTree = async () => {
+    const response = await queryBookCategoryTree();
+    if (response && response.result.success) {
+      setTreeDate(response.value);
+    }
+  };
+
+  useEffect(() => {
+    handleQueryCategoryTree();
+  }, []);
+
   const columns: ProColumns<BookEntity>[] = [
     {
       title: '编号',
       dataIndex: 'bookId',
       align: 'center',
+      valueType: 'digit',
     },
     {
       title: '名称',
@@ -23,10 +39,18 @@ const BookList: React.FC<BookProps> = () => {
       align: 'center',
     },
     {
-      title: '分类',
+      title: '类别',
       dataIndex: 'bookCategoryId',
       render: (_, record) => <span>{record.bookCategory && record.bookCategory.name}</span>,
+      renderFormItem: (item, props: { value?: any }) => (
+        <>
+          <FormItem name="bookCategoryId">
+            <TreeSelect treeData={treeData} placeholder="选择类别" allowClear={true}></TreeSelect>
+          </FormItem>
+        </>
+      ),
       align: 'center',
+      valueType: 'digit',
     },
     {
       title: '封面',
