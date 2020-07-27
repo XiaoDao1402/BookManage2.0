@@ -103,7 +103,7 @@ namespace Admin.Controllers.Category
                     _ = BLL<BookCategoryBLL>().DeleteByIds<BookCategoryEntity>(delete.ToArray());
                 }
 
-                return ApiModel.AsSuccessResult<BookCategoryEntity>(null, "图书分类删除成功");
+                return ApiModel.AsSuccessResult<BookCategoryEntity>(null, $"图书分类删除成功");
             }
             catch (Exception ex)
             {
@@ -127,27 +127,27 @@ namespace Admin.Controllers.Category
             {
                 if (entity.IsNullOrEmpty())
                 {
-                    return ApiModel.AsErrorResult<BookCategoryEntity>(null, "参数有误");
+                    return ApiModel.AsErrorResult<BookCategoryEntity>(null, $"参数有误");
                 }
                 if (entity.Name.IsNotNullOrEmpty())
                 {
                     BookCategoryEntity category = BLL<BookCategoryBLL>().QueryBookCategoryByName(entity.Name);
                     if (category.IsNotNullOrEmpty())
                     {
-                        return ApiModel.AsErrorResult<BookCategoryEntity>(null, "该图书分类已存在");
+                        return ApiModel.AsErrorResult<BookCategoryEntity>(null, $"该图书分类已存在");
                     }
                 }
 
                 BookCategoryEntity bookCategory = new BookCategoryEntity()
                 {
-                    Name = entity.Name,
-                    ParentId = entity.ParentId,
+                    Name = entity.Name ?? string.Empty,
+                    ParentId = entity.ParentId >= 10000 ? entity.ParentId : 0,
                     CreateDate = DateTime.Now,
                     ModifyDate = DateTime.Now,
                 };
 
                 _ = BLL<BookCategoryBLL>().Create(bookCategory);
-                return ApiModel.AsSuccessResult(entity, "新增成功");
+                return ApiModel.AsSuccessResult(entity, $"新增成功");
             }
             catch (Exception ex)
             {
@@ -171,10 +171,13 @@ namespace Admin.Controllers.Category
             try
             {
                 BookCategoryEntity bookCategory = BLL<BookCategoryBLL>().Get<BookCategoryEntity>(bookCategoryId);
-
                 if (bookCategory.IsNullOrEmpty())
                 {
                     return ApiModel.AsErrorResult(entity, $"图书分类不存在");
+                }
+                BookCategoryEntity bcEntity = BLL<BookCategoryBLL>().QueryBookCategoryByName(entity.Name);
+                if (bcEntity.IsNotNullOrEmpty()) {
+                    return ApiModel.AsErrorResult<BookCategoryEntity>(null, $"该图书分类名已存在");
                 }
 
                 bookCategory.Name = entity.Name ?? string.Empty;
@@ -182,7 +185,7 @@ namespace Admin.Controllers.Category
                 bookCategory.ModifyDate = DateTime.Now;
 
                 _ = BLL<BookCategoryBLL>().Update(bookCategory);
-                return ApiModel.AsSuccessResult(entity,"修改成功");
+                return ApiModel.AsSuccessResult(entity, $"修改成功");
             }
             catch (Exception ex)
             {

@@ -35,7 +35,8 @@ namespace JW.Buss.BLL.Category
                     {
                         it.Parent = dal.TEntity<BookCategoryEntity>().AsQueryable()
                             .Where(e => e.BookCategoryId == it.ParentId).First();
-                    });
+                    })
+                    .OrderBy(it => it.BookCategoryId, OrderByType.Desc);
                 return list.ToPageList(pageIndex, pageSize, ref total);
             }
             catch (Exception ex)
@@ -151,15 +152,6 @@ namespace JW.Buss.BLL.Category
             }
         }
 
-
-        #endregion
-
-        #region 新增
-
-        //public void AddBookCategory(List<CategoryEntity> category) { 
-
-
-        //}
 
         #endregion
     }

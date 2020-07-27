@@ -19,7 +19,7 @@ namespace Admin.Controllers.Book
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class BookController : BaseController
     {
         #region 查询
@@ -61,10 +61,131 @@ namespace Admin.Controllers.Book
 
         #region 删除
 
-        //public Task<IActionResult> DeleteBook() { 
-
-        //}
+        /// <summary>
+        /// 批量删除图书
+        /// </summary>
+        /// <param name="bookIds"></param>
+        /// <returns></returns>
+        [HttpPost("DeleteBook")]
+        public Task<IActionResult> DeleteBook(List<int> bookIds)
+        {
+            try
+            {
+                List<int> delete = new List<int>();
+                foreach (var bookId in bookIds)
+                {
+                    BookEntity book = BLL<BookBLL>().Get<BookEntity>(bookId);
+                    if (book.IsNullOrEmpty())
+                    {
+                        return ApiModel.AsErrorResult<BookEntity>(null, $"图书不存在");
+                    }
+                    delete.Append(bookId);
+                }
+                if (delete.Count > 0)
+                {
+                    _ = BLL<BookBLL>().DeleteByIds<BookEntity>(delete.ToArray());
+                }
+                return ApiModel.AsSuccessResult<BookEntity>(null, $"删除成功");
+            }
+            catch (Exception ex)
+            {
+                return ApiModel.AsExceptionResult(ex);
+            }
+        }
 
         #endregion
+
+        #region 新增
+
+        /// <summary>
+        /// 新增图书
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        [HttpPost("AddBook")]
+        public Task<IActionResult> AddBook(BookEntity entity)
+        {
+            try
+            {
+                if (entity.IsNullOrEmpty())
+                {
+                    return ApiModel.AsErrorResult<BookEntity>(null, $"参数有误");
+                }
+                if (entity.Name.IsNotNullOrEmpty())
+                {
+                    BookEntity book = BLL<BookBLL>().QueryBookByName(entity.Name);
+                    if (book.IsNotNullOrEmpty())
+                    {
+                        return ApiModel.AsErrorResult<BookEntity>(null, $"图书已存在");
+                    }
+                }
+                BookEntity bEntity = new BookEntity()
+                {
+                    Name = entity.Name ?? string.Empty,
+                    BookCategoryId = entity.BookCategoryId >= 10000 ? entity.BookCategoryId : 0,
+                    CoverImage = entity.CoverImage ?? string.Empty,
+                    Price = entity.Price >= 0 ? entity.Price : 0,
+                    BorrowNum = entity.BorrowNum >= 0 ? entity.BorrowNum : 0,
+                    TotalStockCount = entity.TotalStockCount >= 0 ? entity.TotalStockCount : 0,
+                    SurplusStockCount = entity.SurplusStockCount >= 0 ? entity.SurplusStockCount : 0,
+                    AdminId = entity.AdminId >= 10000 ? entity.AdminId : 0,
+                    CreateDate = DateTime.Now,
+                    ModifyDate = DateTime.Now,
+
+                };
+                _ = BLL<BookBLL>().Create(bEntity);
+                return ApiModel.AsSuccessResult<BookEntity>(entity, $"新增成功");
+            }
+            catch (Exception ex)
+            {
+                return ApiModel.AsExceptionResult(ex);
+            }
+        }
+
+        #endregion
+
+        #region 修改
+
+        /// <summary>
+        /// 修改图书
+        /// </summary>
+        /// <param name="bookId"></param>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        [HttpPost("UpdateBook/{bookId}")]
+        public Task<IActionResult> UpdateBook(int bookId, BookEntity entity)
+        {
+            try
+            {
+                BookEntity book = BLL<BookBLL>().Get<BookEntity>(bookId);
+                if (book.IsNullOrEmpty())
+                {
+                    return ApiModel.AsErrorResult<BookEntity>(null, $"图书不存在");
+                }
+                BookEntity bookName = BLL<BookBLL>().QueryBookByName(entity.Name);
+                if (bookName.IsNotNullOrEmpty()) {
+                    return ApiModel.AsErrorResult<BookEntity>(null, $"改图书名已存在");
+                }
+                book.Name = entity.Name ?? string.Empty;
+                book.BookCategoryId = entity.BookCategoryId >= 10000 ? entity.BookCategoryId : 0;
+                book.CoverImage = entity.CoverImage ?? string.Empty;
+                book.Price = entity.Price >= 0 ? entity.Price : 0;
+                book.BorrowNum = entity.BorrowNum >= 0 ? entity.BorrowNum : 0;
+                book.TotalStockCount = entity.TotalStockCount >= 0 ? entity.TotalStockCount : 0;
+                book.SurplusStockCount = entity.SurplusStockCount >= 0 ? entity.SurplusStockCount : 0;
+                book.AdminId = entity.AdminId >= 10000 ? entity.AdminId : 0;
+                book.ModifyDate = DateTime.Now;
+
+                _ = BLL<BookBLL>().Update<BookEntity>(book);
+                return ApiModel.AsSuccessResult<BookEntity>(entity, $"修改成功");
+            }
+
+            catch (Exception ex)
+            {
+                return ApiModel.AsExceptionResult(ex);
+            }
+        }
+
+        #endregion 
     }
 }

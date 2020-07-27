@@ -1,5 +1,5 @@
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { connect } from 'dva';
 import ProTable from '@ant-design/pro-table';
 import { BookCategoryEntity } from '@/models/bookcategory';
@@ -24,6 +24,10 @@ const BookCategoryList: React.FC<BookProps> = () => {
   const [createModalVisible, handleModalVisible] = useState<boolean>(false);
   const [editFormValues, setEditFormValues] = useState<BookCategoryEntity>({});
   const [treeData, setTreeDate] = useState();
+
+  useEffect(() => {
+    handleQueryCategoryTree();
+  }, []);
 
   const handleDelete = async (category: number | number[]) => {
     let id: number[] = [];
@@ -87,6 +91,7 @@ const BookCategoryList: React.FC<BookProps> = () => {
       title: '操作',
       dataIndex: 'option',
       valueType: 'option',
+      align: 'center',
       render: (_, record) => (
         <>
           <Authorized authority="" noMatch={null}>
@@ -109,6 +114,7 @@ const BookCategoryList: React.FC<BookProps> = () => {
       ),
     },
   ];
+
   return (
     <PageHeaderWrapper>
       <ProTable<BookCategoryEntity>
@@ -124,7 +130,6 @@ const BookCategoryList: React.FC<BookProps> = () => {
               type="primary"
               onClick={() => {
                 handleModalVisible(true);
-                handleQueryCategoryTree();
               }}
             >
               <PlusOutlined /> 新增
@@ -159,13 +164,10 @@ const BookCategoryList: React.FC<BookProps> = () => {
           onSubmit={async (value: BookCategoryEntity) => {
             let response: ApiModel<BookCategoryEntity>;
             if (value.bookCategoryId && value.bookCategoryId >= 10000) {
-              // 修改
               response = await updateBookCategory(value.bookCategoryId, value);
             } else {
-              // 新增
               response = await addBookCategory(value);
             }
-
             if (response.result && response.result.success) {
               handleModalVisible(false);
               setEditFormValues({});

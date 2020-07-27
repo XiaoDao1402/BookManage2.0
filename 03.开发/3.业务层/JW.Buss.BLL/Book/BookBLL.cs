@@ -33,7 +33,6 @@ namespace JW.Buss.BLL.Book
                     .WhereIF(entity.BookId > 0, it => it.BookId == entity.BookId)
                     .WhereIF(entity.Name.IsNotNullOrEmpty(), it => it.Name.Contains(entity.Name))
                     .WhereIF(entity.BookCategoryId > 0, it => categories.Contains(it.BookCategoryId))
-                    //.In(entity.BookCategoryId>0,it>=)
                     .Mapper(it => it.BookCategory, it => it.BookCategoryId)
                     .Mapper(it =>
                     {
@@ -41,8 +40,25 @@ namespace JW.Buss.BLL.Book
                         .Where(e => e.AdminId == it.AdminId)
                         .IgnoreColumns(e => e.Password)
                         .First();
-                    });
+                    }).OrderBy(it => it.BookId, OrderByType.Desc);
                 return list.ToPageList(entity.Current, entity.PageSize, ref total);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// 查询用户新增的图书是否已存在
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public BookEntity QueryBookByName(string name) {
+            try
+            {
+                BookEntity book = dal.TEntity<BookEntity>().AsQueryable().Where(it => it.Name == name).First();
+                return book;
             }
             catch (Exception ex)
             {

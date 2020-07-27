@@ -127,6 +127,28 @@
             <param name="entity">查询参数实体</param>
             <returns></returns>
         </member>
+        <member name="M:Admin.Controllers.Book.BookController.DeleteBook(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            批量删除图书
+            </summary>
+            <param name="bookIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Admin.Controllers.Book.BookController.AddBook(JW.Buss.BLL.Book.BookEntity)">
+            <summary>
+            新增图书
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Admin.Controllers.Book.BookController.UpdateBook(System.Int32,JW.Buss.BLL.Book.BookEntity)">
+            <summary>
+            修改图书
+            </summary>
+            <param name="bookId"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
         <member name="T:Admin.Controllers.Category.BookCategoryController">
             <summary>
             图书分类控制器

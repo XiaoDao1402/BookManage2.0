@@ -1,4 +1,5 @@
 ﻿using JW.Base.Lang.Attributes;
+using SqlSugar;
 using System;
 using System.Collections.Generic;
 using System.Text;
