@@ -120,7 +120,7 @@
             图书控制器
             </summary>
         </member>
-        <member name="M:Admin.Controllers.Book.BookController.QueryBook(JW.Data.Entity.Models.PageQueryEntity)">
+        <member name="M:Admin.Controllers.Book.BookController.QueryBook(JW.Data.Entity.Models.PageQueryBookEntity)">
             <summary>
             查询图书
             </summary>
@@ -134,14 +134,14 @@
             <param name="bookIds"></param>
             <returns></returns>
         </member>
-        <member name="M:Admin.Controllers.Book.BookController.AddBook(JW.Buss.BLL.Book.BookEntity)">
+        <member name="M:Admin.Controllers.Book.BookController.AddBook(JW.Data.Entity.Book.BookEntity)">
             <summary>
             新增图书
             </summary>
             <param name="entity"></param>
             <returns></returns>
         </member>
-        <member name="M:Admin.Controllers.Book.BookController.UpdateBook(System.Int32,JW.Buss.BLL.Book.BookEntity)">
+        <member name="M:Admin.Controllers.Book.BookController.UpdateBook(System.Int32,JW.Data.Entity.Book.BookEntity)">
             <summary>
             修改图书
             </summary>
@@ -232,6 +232,33 @@
             </summary>
             <param name="fileType">文件类型 image 或者 video</param>
             <param name="file">文件</param>
+            <returns></returns>
+        </member>
+        <member name="T:Admin.Controllers.UserBook.UserBookController">
+            <summary>
+            用户借书记录控制器
+            </summary>
+        </member>
+        <member name="M:Admin.Controllers.UserBook.UserBookController.QueryUserBook(JW.Data.Entity.Models.PageQueryUserBookEntity)">
+            <summary>
+            查询用户借书记录
+            </summary>
+            <param name="entity">查询参数</param>
+            <returns></returns>
+        </member>
+        <member name="T:Admin.Controllers.User.UserController">
+            <summary>
+            用户控制器
+            </summary>
+        </member>
+        <member name="M:Admin.Controllers.User.UserController.QueryUser(JW.Data.Entity.User.UserEntity)">
+            <summary>
+            查询用户
+            </summary>
+            <param name="userId">用户编号</param>
+            <param name="name">用户名</param>
+            <param name="current">当前页码</param>
+            <param name="pageSize">每页数据条数</param>
             <returns></returns>
         </member>
         <member name="T:Admin.Model.FileModel">

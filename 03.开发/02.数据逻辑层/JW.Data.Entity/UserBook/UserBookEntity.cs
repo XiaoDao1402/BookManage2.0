@@ -1,5 +1,5 @@
 ﻿using JW.Base.Lang.Attributes;
-using JW.Buss.BLL.Book;
+using JW.Data.Entity.Book;
 using JW.Data.Entity.User;
 using SqlSugar;
 using System;

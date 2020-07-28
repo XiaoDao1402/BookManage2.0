@@ -11,6 +11,7 @@ using JW.Buss.BLL.Book;
 using JW.Data.Entity.Category;
 using JW.Buss.BLL.Category;
 using JW.Base.Lang;
+using JW.Data.Entity.Book;
 
 namespace Admin.Controllers.Book
 {
@@ -30,7 +31,7 @@ namespace Admin.Controllers.Book
         /// <param name="entity">查询参数实体</param>
         /// <returns></returns>
         [HttpPost("QueryBook")]
-        public Task<IActionResult> QueryBook(PageQueryEntity entity)
+        public Task<IActionResult> QueryBook(PageQueryBookEntity entity)
         {
             try
             {

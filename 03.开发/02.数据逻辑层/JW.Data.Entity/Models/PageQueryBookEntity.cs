@@ -7,10 +7,10 @@ using System.Text;
 namespace JW.Data.Entity.Models
 {
     /// <summary>
-    /// 条件实体
+    /// 分页查询图书 条件实体
     /// </summary>
     [Name("条件实体")]
-    public class PageQueryEntity
+    public class PageQueryBookEntity
     {
         #region 查询条件
 

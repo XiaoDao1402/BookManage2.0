@@ -1,4 +1,5 @@
 ﻿using JW.Base.Lang.Attributes;
+using JW.Data.Entity.UserBook;
 using SqlSugar;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,24 @@ namespace JW.Data.Entity.User
         /// 修改时间
         /// </summary>
         public DateTime ModifyDate { get; set; }
+
+        /// <summary>
+        /// 用户借书记录
+        /// </summary>
+        [SugarColumn(IsIgnore =true)]
+        public UserBookEntity UserBook { get; set; }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        [SugarColumn(IsIgnore =true)]
+        public int Current { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [SugarColumn(IsIgnore = true)]
+        public int PageSize { get; set; }
+
     }
 }

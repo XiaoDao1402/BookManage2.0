@@ -1,6 +1,7 @@
 ﻿using JW.Base.Lang;
 using JW.Data.Dal;
 using JW.Data.Entity.Admin;
+using JW.Data.Entity.Book;
 using JW.Data.Entity.Category;
 using JW.Data.Entity.Models;
 using SqlSugar;
@@ -24,7 +25,7 @@ namespace JW.Buss.BLL.Book
         /// <param name="entity">查询参数实体</param>
         /// <param name="total">总数据条数</param>
         /// <returns></returns>
-        public List<BookEntity> QueryBook(int[] categories,PageQueryEntity entity, ref int total)
+        public List<BookEntity> QueryBook(int[] categories,PageQueryBookEntity entity, ref int total)
         {
             try
             {

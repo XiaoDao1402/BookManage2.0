@@ -146,6 +146,32 @@ export default {
                 },
               ],
             },
+            {
+              name: 'userbook',
+              path: '/userbook',
+              icon: 'FileSearchOutlined',
+              routes: [
+                {
+                  name: 'userbooks',
+                  path: '/userbook/userbooks',
+                  icon: 'FileSearchOutlined',
+                  component: './UserBook/UserBooks',
+                },
+              ],
+            },
+            {
+              name: 'usermanagement',
+              path: '/usermanagement',
+              icon: 'FileSearchOutlined',
+              routes: [
+                {
+                  name: 'users',
+                  path: '/usermanagement/users',
+                  icon: 'FileSearchOutlined',
+                  component: './UserManagement/Users',
+                },
+              ],
+            },
           ],
         },
         {

@@ -39,4 +39,10 @@ export default {
   'menu.book': '图书管理',
   'menu.book.bookcategory': '图书分类',
   'menu.book.booklist': '图书列表',
+
+  'menu.userbook': '借书管理',
+  'menu.userbook.userbooks': '借书记录',
+
+  'menu.usermanagement': '用户管理',
+  'menu.usermanagement.users': '用户信息',
 };

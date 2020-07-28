@@ -39,6 +39,76 @@
             修改日期
             </summary>
         </member>
+        <member name="T:JW.Data.Entity.Book.BookEntity">
+            <summary>
+            图书实体
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Book.BookEntity.BookId">
+            <summary>
+            图书id
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Book.BookEntity.Name">
+            <summary>
+            图书名称
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Book.BookEntity.BookCategoryId">
+            <summary>
+            图书分类id
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Book.BookEntity.CoverImage">
+            <summary>
+            图书封面
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Book.BookEntity.Price">
+            <summary>
+            图书价格
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Book.BookEntity.BorrowNum">
+            <summary>
+            借书次数
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Book.BookEntity.TotalStockCount">
+            <summary>
+            总库存
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Book.BookEntity.SurplusStockCount">
+            <summary>
+            剩余库存
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Book.BookEntity.AdminId">
+            <summary>
+            管理员id
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Book.BookEntity.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Book.BookEntity.ModifyDate">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Book.BookEntity.Admin">
+            <summary>
+            管理员
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Book.BookEntity.BookCategory">
+            <summary>
+            图书分类
+            </summary>
+        </member>
         <member name="T:JW.Data.Entity.Category.BookCategoryEntity">
             <summary>
             图书分类实体
@@ -99,104 +169,164 @@
             上级分类
             </summary>
         </member>
-        <member name="T:JW.Data.Entity.Models.PageQueryEntity">
+        <member name="T:JW.Data.Entity.Models.PageQueryBookEntity">
             <summary>
-            条件实体
+            分页查询图书 条件实体
             </summary>
         </member>
-        <member name="P:JW.Data.Entity.Models.PageQueryEntity.BookId">
+        <member name="P:JW.Data.Entity.Models.PageQueryBookEntity.BookId">
             <summary>
             图书id
             </summary>
         </member>
-        <member name="P:JW.Data.Entity.Models.PageQueryEntity.Name">
+        <member name="P:JW.Data.Entity.Models.PageQueryBookEntity.Name">
             <summary>
             图书名称
             </summary>
         </member>
-        <member name="P:JW.Data.Entity.Models.PageQueryEntity.BookCategoryId">
+        <member name="P:JW.Data.Entity.Models.PageQueryBookEntity.BookCategoryId">
             <summary>
             图书分类id
             </summary>
         </member>
-        <member name="P:JW.Data.Entity.Models.PageQueryEntity.Current">
+        <member name="P:JW.Data.Entity.Models.PageQueryBookEntity.Current">
             <summary>
             当前页码
             </summary>
         </member>
-        <member name="P:JW.Data.Entity.Models.PageQueryEntity.PageSize">
+        <member name="P:JW.Data.Entity.Models.PageQueryBookEntity.PageSize">
             <summary>
             每页数据条数
             </summary>
         </member>
-        <member name="T:JW.Buss.BLL.Book.BookEntity">
+        <member name="T:JW.Data.Entity.Models.PageQueryUserBookEntity">
             <summary>
-            图书实体
+            分页查询用户借书记录 条件实体
             </summary>
         </member>
-        <member name="P:JW.Buss.BLL.Book.BookEntity.BookId">
+        <member name="P:JW.Data.Entity.Models.PageQueryUserBookEntity.UserBookId">
             <summary>
-            图书id
+            用户借书id
             </summary>
         </member>
-        <member name="P:JW.Buss.BLL.Book.BookEntity.Name">
+        <member name="P:JW.Data.Entity.Models.PageQueryUserBookEntity.UserName">
             <summary>
-            图书名称
+            用户名
             </summary>
         </member>
-        <member name="P:JW.Buss.BLL.Book.BookEntity.BookCategoryId">
+        <member name="P:JW.Data.Entity.Models.PageQueryUserBookEntity.BookName">
             <summary>
-            图书分类id
+            图书名
             </summary>
         </member>
-        <member name="P:JW.Buss.BLL.Book.BookEntity.CoverImage">
-            <summary>
-            图书封面
-            </summary>
-        </member>
-        <member name="P:JW.Buss.BLL.Book.BookEntity.Price">
-            <summary>
-            图书价格
-            </summary>
-        </member>
-        <member name="P:JW.Buss.BLL.Book.BookEntity.BorrowNum">
-            <summary>
-            借书次数
-            </summary>
-        </member>
-        <member name="P:JW.Buss.BLL.Book.BookEntity.TotalStockCount">
-            <summary>
-            总库存
-            </summary>
-        </member>
-        <member name="P:JW.Buss.BLL.Book.BookEntity.SurplusStockCount">
-            <summary>
-            剩余库存
-            </summary>
-        </member>
-        <member name="P:JW.Buss.BLL.Book.BookEntity.AdminId">
-            <summary>
-            管理员id
-            </summary>
-        </member>
-        <member name="P:JW.Buss.BLL.Book.BookEntity.CreateDate">
+        <member name="P:JW.Data.Entity.Models.PageQueryUserBookEntity.CreateDate">
             <summary>
             创建时间
             </summary>
         </member>
-        <member name="P:JW.Buss.BLL.Book.BookEntity.ModifyDate">
+        <member name="P:JW.Data.Entity.Models.PageQueryUserBookEntity.CreateDateStart">
+            <summary>
+            创建开始时间
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Models.PageQueryUserBookEntity.CreateDateEnd">
+            <summary>
+            创建结束时间
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Models.PageQueryUserBookEntity.Current">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.Models.PageQueryUserBookEntity.PageSize">
+            <summary>
+            每页数据条数
+            </summary>
+        </member>
+        <member name="T:JW.Data.Entity.UserBook.UserBookEntity">
+            <summary>
+            借书记录实体
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.UserBook.UserBookEntity.UserBookId">
+            <summary>
+            用户借书id
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.UserBook.UserBookEntity.UserId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.UserBook.UserBookEntity.BookId">
+            <summary>
+            图书id
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.UserBook.UserBookEntity.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.UserBook.UserBookEntity.ModifyDate">
             <summary>
             修改时间
             </summary>
         </member>
-        <member name="P:JW.Buss.BLL.Book.BookEntity.Admin">
+        <member name="P:JW.Data.Entity.UserBook.UserBookEntity.User">
             <summary>
-            管理员
+            用户
             </summary>
         </member>
-        <member name="P:JW.Buss.BLL.Book.BookEntity.BookCategory">
+        <member name="P:JW.Data.Entity.UserBook.UserBookEntity.Book">
             <summary>
-            图书分类
+            图书
+            </summary>
+        </member>
+        <member name="T:JW.Data.Entity.User.UserEntity">
+            <summary>
+            用户实体
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.User.UserEntity.UserId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.User.UserEntity.Name">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.User.UserEntity.TotalCount">
+            <summary>
+            总借书记录
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.User.UserEntity.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.User.UserEntity.ModifyDate">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.User.UserEntity.UserBook">
+            <summary>
+            用户借书记录
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.User.UserEntity.Current">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.User.UserEntity.PageSize">
+            <summary>
+            
             </summary>
         </member>
     </members>

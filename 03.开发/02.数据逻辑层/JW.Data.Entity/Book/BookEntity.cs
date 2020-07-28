@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace JW.Buss.BLL.Book
+namespace JW.Data.Entity.Book
 {
     /// <summary>
     /// 图书实体

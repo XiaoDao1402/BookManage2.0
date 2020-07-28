@@ -98,7 +98,7 @@ const BookList: React.FC<BookProps> = () => {
       title: '价格',
       dataIndex: 'price',
       hideInSearch: true,
-      valueType: 'digit',
+      valueType: 'money',
       align: 'center',
     },
     {
