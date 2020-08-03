@@ -152,6 +152,22 @@ namespace JW.Buss.BLL.Category
             }
         }
 
+        /// <summary>
+        /// 查询所有父级分类
+        /// </summary>
+        /// <returns></returns>
+        public List<BookCategoryEntity> QueryBookCategoryParent() {
+            try {
+                List<BookCategoryEntity> list = dal.TEntity<BookCategoryEntity>()
+                    .AsQueryable()
+                    .Where(it => it.ParentId == 0)
+                    .ToList();
+                return list;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
 
         #endregion
     }

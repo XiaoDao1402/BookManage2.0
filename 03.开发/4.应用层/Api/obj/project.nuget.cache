@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NlZH2vIifmUIH92Rkp6MnUNRk5e51SwPw8fOjHJc3ecsSTXPdzgwnPR9QNs6Ge5LUJBpRx0xuAw7LnDHNeVMnQ==",
+  "dgSpecHash": "ZIDmjFkROkERo7E50XDSqvd+RG2etCIrLRK7ezDpUYkq4pdCYfbndd6MowsU1Ws/9ovNkXDediBjklVvy38q/Q==",
   "success": true,
   "projectFilePath": "F:\\project\\图书管理2.0\\BookManage2.0\\03.开发\\4.应用层\\Api\\Api.csproj",
   "expectedPackageFiles": [
@@ -82,6 +82,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "C:\\Users\\JQ-KF 05\\.nuget\\packages\\oracle.manageddataaccess.core\\2.18.3\\oracle.manageddataaccess.core.2.18.3.nupkg.sha512",
     "C:\\Users\\JQ-KF 05\\.nuget\\packages\\portable.bouncycastle\\1.8.6\\portable.bouncycastle.1.8.6.nupkg.sha512",
+    "C:\\Users\\JQ-KF 05\\.nuget\\packages\\qiniu.shared\\7.2.15\\qiniu.shared.7.2.15.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

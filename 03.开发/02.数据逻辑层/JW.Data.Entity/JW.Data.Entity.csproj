@@ -16,4 +16,10 @@
     <ProjectReference Include="..\..\01.基础平台\JW.Base\JW.Base.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Entity.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

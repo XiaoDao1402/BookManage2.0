@@ -160,3 +160,12 @@ F:\project\图书管理2.0\BookManage2.0\03.开发\4.应用层\Api\bin\Debug\net
 F:\project\图书管理2.0\BookManage2.0\03.开发\4.应用层\Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Annotations.dll
 F:\project\图书管理2.0\BookManage2.0\03.开发\4.应用层\Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 F:\project\图书管理2.0\BookManage2.0\03.开发\4.应用层\Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\project\图书管理2.0\BookManage2.0\03.开发\4.应用层\Api\obj\Debug\netcoreapp3.1\Api.csproj.CoreCompileInputs.cache
+F:\project\图书管理2.0\BookManage2.0\03.开发\4.应用层\Api\obj\Debug\netcoreapp3.1\Api.MvcApplicationPartsAssemblyInfo.cs
+F:\project\图书管理2.0\BookManage2.0\03.开发\4.应用层\Api\obj\Debug\netcoreapp3.1\Api.MvcApplicationPartsAssemblyInfo.cache
+F:\project\图书管理2.0\BookManage2.0\03.开发\4.应用层\Api\bin\Debug\netcoreapp3.1\Qiniu.dll
+F:\project\图书管理2.0\BookManage2.0\03.开发\4.应用层\Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\project\图书管理2.0\BookManage2.0\03.开发\4.应用层\Api\bin\Debug\netcoreapp3.1\JW.Base.Qiniuyun.dll
+F:\project\图书管理2.0\BookManage2.0\03.开发\4.应用层\Api\bin\Debug\netcoreapp3.1\JW.Base.Qiniuyun.pdb
+F:\project\图书管理2.0\BookManage2.0\03.开发\4.应用层\Api\bin\Debug\netcoreapp3.1\Entity.xml
+F:\project\图书管理2.0\BookManage2.0\03.开发\4.应用层\Api\bin\Debug\netcoreapp3.1\Api.xml

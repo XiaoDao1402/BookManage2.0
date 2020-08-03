@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 using Google.Protobuf.WellKnownTypes;
 using JW.Base.Http.Model;
 using JW.Base.Lang;
+using JW.Buss.BLL.Book;
 using JW.Buss.BLL.Category;
+using JW.Data.Entity.Book;
 using JW.Data.Entity.Category;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -97,6 +99,13 @@ namespace Admin.Controllers.Category
                     {
                         return ApiModel.AsErrorResult<BookCategoryEntity>(null, $"图书分类下面有子类，不能删除");
                     }
+
+                    // 判断该分类下面是否有图书，有图书就不能删除
+                    List<BookEntity> book = BLL<BookBLL>().QueryBookByCategoryId(bookCategoryId);
+                    if (book.IsNotNullOrEmpty()) {
+                        return ApiModel.AsErrorResult<BookEntity>(null, $"图书分类下面有图书，不能删除");
+                    }
+
                 }
                 if (delete.Count > 0)
                 {

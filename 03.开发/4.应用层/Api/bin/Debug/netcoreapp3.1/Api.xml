@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api</name>
+    </assembly>
+    <members>
+        <member name="T:Api.Controllers.BaseController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.BaseController.BLL``1">
+            <summary>
+            业务层
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.BaseController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.BaseController.SetSession(System.String,System.String)">
+            <summary>
+            设置Session
+            </summary>
+            <param name="key">键</param>
+            <param name="value">值</param>
+        </member>
+        <member name="M:Api.Controllers.BaseController.GetSession(System.String)">
+            <summary>
+            获取Session
+            </summary>
+            <param name="key">键</param>
+            <returns>返回对应的值</returns>
+        </member>
+        <member name="M:Api.Controllers.BaseController.ClearSession">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.BaseController.GetCurrentUserId">
+            <summary>
+            获取当前用户ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Api.Controllers.BaseController.CurrentAdmin">
+            <summary>
+            当前管理员
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.BaseController.GetJwtToken(JW.Base.Security.SessionUser)">
+            <summary>
+            获取token
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.BaseController.DisponseJwtToken">
+            <summary>
+            注销登陆
+            </summary>
+        </member>
+        <member name="T:Api.Controllers.Book.BookController">
+            <summary>
+            图书控制器
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.Book.BookController.QueryBookByCategoryId(System.Int32)">
+            <summary>
+            根据分类id查询图书
+            </summary>
+            <param name="bookCategoryId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Api.Controllers.Category.BookCategoryController">
+            <summary>
+            图书分类控制器
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.Category.BookCategoryController.QueryBookCategoryParent">
+            <summary>
+            查询所有父级分类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.Category.BookCategoryController.QuerySubclass(System.Int32)">
+            <summary>
+            根据父类id查询子类
+            </summary>
+            <param name="parentId"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

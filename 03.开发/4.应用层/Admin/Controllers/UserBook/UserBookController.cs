@@ -18,7 +18,7 @@ namespace Admin.Controllers.UserBook
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class UserBookController : BaseController
     {
         #region 查询

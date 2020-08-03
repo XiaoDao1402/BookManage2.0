@@ -67,6 +67,23 @@ namespace JW.Buss.BLL.Book
             }
         }
 
+        /// <summary>
+        /// 根据分类id查询图书
+        /// </summary>
+        /// <param name="bookCategoryId"></param>
+        /// <returns></returns>
+        public List<BookEntity> QueryBookByCategoryId(int bookCategoryId) {
+            try {
+                List<BookEntity> list = dal.TEntity<BookEntity>()
+                    .AsQueryable()
+                    .Where(it => it.BookCategoryId == bookCategoryId)
+                    .ToList();
+                return list;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
         #endregion
     }
 }

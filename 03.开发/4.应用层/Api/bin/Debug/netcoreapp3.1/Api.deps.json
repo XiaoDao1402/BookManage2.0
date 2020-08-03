@@ -17,7 +17,7 @@
     "optimize": false,
     "keyFile": "",
     "emitEntryPoint": true,
-    "xmlDoc": false,
+    "xmlDoc": true,
     "debugType": "portable"
   },
   "targets": {
@@ -26,10 +26,12 @@
         "dependencies": {
           "IdentityModel": "4.3.1",
           "JW.Base": "1.0.0",
+          "JW.Base.Qiniuyun": "1.0.0",
           "JW.Buss.BLL": "1.0.0",
           "JW.Data.Entity": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.6",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.3",
+          "Swashbuckle.AspNetCore": "5.5.1",
           "Swashbuckle.AspNetCore.Annotations": "5.5.1",
           "System.IdentityModel.Tokens.Jwt": "6.7.1",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
@@ -828,6 +830,7 @@
           "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll": {}
         }
       },
+      "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
       "Microsoft.Extensions.Configuration/3.1.4": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.4"
@@ -1368,6 +1371,17 @@
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
         }
       },
+      "Qiniu.Shared/7.2.15": {
+        "runtime": {
+          "lib/netstandard1.6/Qiniu.dll": {
+            "assemblyVersion": "7.2.15.0",
+            "fileVersion": "7.2.15.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.6/Qiniu.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
@@ -1601,6 +1615,14 @@
           "lib/netstandard2.0/SqlSugar.dll": {}
         }
       },
+      "Swashbuckle.AspNetCore/5.5.1": {
+        "dependencies": {
+          "Microsoft.Extensions.ApiDescription.Server": "3.0.0",
+          "Swashbuckle.AspNetCore.Swagger": "5.5.1",
+          "Swashbuckle.AspNetCore.SwaggerGen": "5.5.1",
+          "Swashbuckle.AspNetCore.SwaggerUI": "5.5.1"
+        }
+      },
       "Swashbuckle.AspNetCore.Annotations/5.5.1": {
         "dependencies": {
           "Swashbuckle.AspNetCore.SwaggerGen": "5.5.1"
@@ -1641,6 +1663,17 @@
         },
         "compile": {
           "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/5.5.1": {
+        "runtime": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "assemblyVersion": "5.5.1.0",
+            "fileVersion": "5.5.1.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -2636,6 +2669,18 @@
         },
         "compile": {
           "JW.Base.dll": {}
+        }
+      },
+      "JW.Base.Qiniuyun/1.0.0": {
+        "dependencies": {
+          "JW.Base": "1.0.0",
+          "Qiniu.Shared": "7.2.15"
+        },
+        "runtime": {
+          "JW.Base.Qiniuyun.dll": {}
+        },
+        "compile": {
+          "JW.Base.Qiniuyun.dll": {}
         }
       },
       "JW.Buss.BLL/1.0.0": {
@@ -4566,6 +4611,13 @@
       "path": "microsoft.dotnet.platformabstractions/2.1.0",
       "hashPath": "microsoft.dotnet.platformabstractions.2.1.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LH4OE/76F6sOCslif7+Xh3fS/wUUrE5ryeXAMcoCnuwOQGT5Smw0p57IgDh/pHgHaGz/e+AmEQb7pRgb++wt0w==",
+      "path": "microsoft.extensions.apidescription.server/3.0.0",
+      "hashPath": "microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.Configuration/3.1.4": {
       "type": "package",
       "serviceable": true,
@@ -4867,6 +4919,13 @@
       "path": "portable.bouncycastle/1.8.6",
       "hashPath": "portable.bouncycastle.1.8.6.nupkg.sha512"
     },
+    "Qiniu.Shared/7.2.15": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J46cZb8VJ7XKit0wjXmUHRWvF/oAm+EHTtUQdHW8U5AcnQDTs26u8jYydVYQ0RjN0mFyaXhRAz5yKrpHC22qIw==",
+      "path": "qiniu.shared/7.2.15",
+      "hashPath": "qiniu.shared.7.2.15.nupkg.sha512"
+    },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -5063,6 +5122,13 @@
       "path": "sqlsugarcore/5.0.0.15",
       "hashPath": "sqlsugarcore.5.0.0.15.nupkg.sha512"
     },
+    "Swashbuckle.AspNetCore/5.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M1CdrptwDw/9Es/W1twwM6w2W0I019uhMDA5q3LUQo4TYZblDipu/oO5gtUpe0tEh1UOdrxlZeQBhmJSTtAtnA==",
+      "path": "swashbuckle.aspnetcore/5.5.1",
+      "hashPath": "swashbuckle.aspnetcore.5.5.1.nupkg.sha512"
+    },
     "Swashbuckle.AspNetCore.Annotations/5.5.1": {
       "type": "package",
       "serviceable": true,
@@ -5083,6 +5149,13 @@
       "sha512": "sha512-SftLofzIA063y73rn17YCf4dSXrgZdxLBig9E/HT4IIZ9mlsm12KmsNKUXf4U+X09KO8sVq1D29XfjVtC69eAg==",
       "path": "swashbuckle.aspnetcore.swaggergen/5.5.1",
       "hashPath": "swashbuckle.aspnetcore.swaggergen.5.5.1.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/5.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a2Ym9DYrvTZ/Yt8GVfn6M1ZP++Ra3KAfCNe4pTtkNiHpBgWhsYWUT3T07REtFImduBh93GAHuItZpltSOZV13A==",
+      "path": "swashbuckle.aspnetcore.swaggerui/5.5.1",
+      "hashPath": "swashbuckle.aspnetcore.swaggerui.5.5.1.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",
@@ -5722,6 +5795,11 @@
       "hashPath": "system.xml.xmldocument.4.0.1.nupkg.sha512"
     },
     "JW.Base/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "JW.Base.Qiniuyun/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

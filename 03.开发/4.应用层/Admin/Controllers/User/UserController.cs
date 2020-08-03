@@ -15,7 +15,7 @@ namespace Admin.Controllers.User {
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class UserController : BaseController {
         #region  查询
 
