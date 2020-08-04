@@ -16,7 +16,7 @@ namespace Api.Controllers.Category {
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class BookCategoryController : BaseController {
 
         #region 查询
@@ -38,12 +38,12 @@ namespace Api.Controllers.Category {
         /// <summary>
         /// 根据父类id查询子类
         /// </summary>
-        /// <param name="parentId"></param>
+        /// <param name="bookCategoryId"></param>
         /// <returns></returns>
-        [HttpGet("QuerySubclass/{parentId}")]
-        public Task<IActionResult> QuerySubclass(int parentId) {
+        [HttpGet("QuerySubclass/{bookCategoryId}")]
+        public Task<IActionResult> QuerySubclass(int bookCategoryId) {
             try {
-                List<BookCategoryEntity> list = BLL<BookCategoryBLL>().QuerySubclass(parentId);
+                List<BookCategoryEntity> list = BLL<BookCategoryBLL>().QuerySubclass(bookCategoryId);
                 return ApiModel.AsSuccessResult(list);
             } catch (Exception ex) {
                 return ApiModel.AsExceptionResult(ex);

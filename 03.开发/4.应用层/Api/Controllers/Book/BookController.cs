@@ -19,6 +19,8 @@ namespace Api.Controllers.Book {
     //[Authorize]
     public class BookController : BaseController {
 
+        #region 查询
+
         /// <summary>
         /// 根据分类id查询图书
         /// </summary>
@@ -34,5 +36,7 @@ namespace Api.Controllers.Book {
                 return ApiModel.AsExceptionResult(ex);
             }
         }
+
+        #endregion
     }
 }

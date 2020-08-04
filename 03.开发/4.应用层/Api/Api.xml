@@ -90,7 +90,14 @@
             <summary>
             根据父类id查询子类
             </summary>
-            <param name="parentId"></param>
+            <param name="bookCategoryId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.User.UserController.AddUser(JW.Data.Entity.User.UserEntity)">
+            <summary>
+            用户注册
+            </summary>
+            <param name="entity"></param>
             <returns></returns>
         </member>
     </members>

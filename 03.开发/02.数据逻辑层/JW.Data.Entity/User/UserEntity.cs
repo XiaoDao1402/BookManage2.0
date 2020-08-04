@@ -12,8 +12,7 @@ namespace JW.Data.Entity.User
     /// </summary>
     [Name("用户实体")]
     [SugarTable("t_user")]
-    public class UserEntity
-    {
+    public class UserEntity {
         /// <summary>
         /// 用户id
         /// </summary>
@@ -23,6 +22,16 @@ namespace JW.Data.Entity.User
         /// 用户名
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        ///  账号
+        /// </summary>
+        public string Account { get; set; }
+
+        /// <summary>
+        /// 密码
+        /// </summary>
+        public string Password {get;set;} 
 
         /// <summary>
         /// 总借书记录

@@ -299,6 +299,16 @@
             用户名
             </summary>
         </member>
+        <member name="P:JW.Data.Entity.User.UserEntity.Account">
+            <summary>
+             账号
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.User.UserEntity.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
         <member name="P:JW.Data.Entity.User.UserEntity.TotalCount">
             <summary>
             总借书记录

@@ -16,6 +16,8 @@ if Exists(select top 1 * from sysObjects where Id=OBJECT_ID(N't_user') and xtype
 create table t_user(
 	UserId int primary key identity(10001,1),	--用户id
 	Name nvarchar(32) not null,				--用户名
+	Account varchar(32) not null,			--账号
+	[Password] varchar(32) not null,		--密码
 	TotalCount int not null,				--总借书记录
 	CreateDate datetime default getdate(), --创建时间
 	ModifyDate datetime default getdate()  --修改时间

@@ -22,6 +22,11 @@ const UsersList: React.FC<UserProps> = () => {
       align: 'center',
     },
     {
+      title: '小程序账号',
+      dataIndex: 'account',
+      align: 'center',
+    },
+    {
       title: '总借书记录',
       dataIndex: 'totalCount',
       hideInSearch: true,

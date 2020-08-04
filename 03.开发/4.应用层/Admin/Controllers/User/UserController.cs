@@ -17,6 +17,7 @@ namespace Admin.Controllers.User {
     [ApiController]
     [Authorize]
     public class UserController : BaseController {
+        
         #region  查询
 
         /// <summary>

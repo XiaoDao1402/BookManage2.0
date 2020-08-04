@@ -60,11 +60,45 @@ namespace JW.Buss.BLL.User
                                 .ToList();
                         });
                         ue.TotalCount = userBookList.Where(item => item.UserId == ue.UserId).Count();
-                    });
+                    }).IgnoreColumns(it=>it.Password);
                 return list.ToPageList(pageIndex, pageSize, ref total);
             }
             catch (Exception ex)
             {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// 查询用户当前注册的用户名是否存在(小程序API)
+        /// </summary>
+        /// <param name="name">用户名</param>
+        /// <returns></returns>
+        public UserEntity QueryUserByName(string name) {
+            try {
+                UserEntity user = dal.TEntity<UserEntity>()
+                    .AsQueryable()
+                    .WhereIF(name.IsNotNullOrEmpty(), it => it.Name == name)
+                    .First();
+                return user;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// 查询用户当前注册的账号是否存在(小程序API)
+        /// </summary>
+        /// <param name="account">账号</param>
+        /// <returns></returns>
+        public UserEntity QueryUserByAccount(string account) {
+            try {
+                UserEntity user = dal.TEntity<UserEntity>()
+                   .AsQueryable()
+                   .WhereIF(account.IsNotNullOrEmpty(), it => it.Account == account)
+                   .First();
+                return user;
+            } catch (Exception ex) {
                 throw ex;
             }
         }
