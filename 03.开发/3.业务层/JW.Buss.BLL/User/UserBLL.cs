@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using JW.Base.Lang.Encrypt;
 
 namespace JW.Buss.BLL.User
 {
@@ -87,7 +88,7 @@ namespace JW.Buss.BLL.User
         }
 
         /// <summary>
-        /// 查询用户当前注册的账号是否存在(小程序API)
+        /// 根据账号查找用户(小程序API)
         /// </summary>
         /// <param name="account">账号</param>
         /// <returns></returns>
@@ -95,14 +96,13 @@ namespace JW.Buss.BLL.User
             try {
                 UserEntity user = dal.TEntity<UserEntity>()
                    .AsQueryable()
-                   .WhereIF(account.IsNotNullOrEmpty(), it => it.Account == account)
+                   .Where(it => it.Account == account)
                    .First();
                 return user;
             } catch (Exception ex) {
                 throw ex;
             }
         }
-
         #endregion
     }
 }
