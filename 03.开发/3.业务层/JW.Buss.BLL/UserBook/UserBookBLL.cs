@@ -48,6 +48,28 @@ namespace JW.Buss.BLL.UserBook
             }
         }
 
+
+        /// <summary>
+        /// 根据用户id查询该用户的借书记录(小程序API)
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public List<UserBookEntity> GetUserBook(int userId) {
+            try {
+                List<UserBookEntity> list = dal.TEntity<UserBookEntity>()
+                    .AsQueryable()
+                    .Where(it => it.UserId == userId)
+                    .Where(it=>it.State==1)
+                    .Mapper(it => it.User, it => it.UserId)
+                    .Mapper(it => it.Book, it => it.BookId)
+                    .ToList();
+                return list;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+
         #endregion 
     }
 }

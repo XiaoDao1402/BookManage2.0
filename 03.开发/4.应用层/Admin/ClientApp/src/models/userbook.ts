@@ -5,9 +5,11 @@ export interface UserBookEntity {
   userBookId?: number;
   userId?: number;
   bookId?: number;
+  state: number;
   adminId?: number;
   createDate?: Date;
   modifyDate?: Date;
+  returnDate?: string;
   user?: UserEntity;
   book?: BookEntity;
 }

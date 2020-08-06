@@ -1,4 +1,7 @@
-﻿--管理员表
+﻿    use db_bookmanage
+
+
+--管理员表
 if Exists(select top 1 * from sysObjects where Id=OBJECT_ID(N't_admin') and xtype='U')
     drop table t_admin;
 create table t_admin(
@@ -58,6 +61,20 @@ create table t_user_book(
 	UserBookId int primary key identity(10001,1),	--用户借书id
 	UserId int not null,							--用户id
 	BookId int not null,							--图书id
+	[State] int not null,							--状态 1.借书中 2.已还书
+	CreateDate datetime default getdate(),	--创建时间
+	ModifyDate datetime default getdate(),  --修改时间
+	ReturnDate varchar(30)					--还书时间
+);
+
+--用户还书记录表
+if Exists(select top 1 * from sysObjects where Id=OBJECT_ID(N't_user_book_return') and xtype='U')
+    drop table t_user_book_return;
+create table t_user_book_return(
+	ReturnId int primary key identity(10001,1),		--用户还书id
+	UserId int not null,							--用户id
+	BookId int not null,							--图书id
 	CreateDate datetime default getdate(), --创建时间
 	ModifyDate datetime default getdate()  --修改时间
 );
+

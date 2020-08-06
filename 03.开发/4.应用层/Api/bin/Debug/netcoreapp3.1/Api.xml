@@ -46,9 +46,9 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="P:Api.Controllers.BaseController.CurrentAdmin">
+        <member name="P:Api.Controllers.BaseController.CurrentUser">
             <summary>
-            当前管理员
+            获取当前用户信息
             </summary>
         </member>
         <member name="M:Api.Controllers.BaseController.GetJwtToken(JW.Base.Security.SessionUser)">
@@ -93,6 +93,26 @@
             <param name="bookCategoryId"></param>
             <returns></returns>
         </member>
+        <member name="T:Api.Controllers.UserBook.UserBookController">
+            <summary>
+            借书记录控制器
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.UserBook.UserBookController.getUserBook(System.Int32)">
+            <summary>
+            根据用户id查询该用户的借书记录
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UserBook.UserBookController.UpdateUserBook(System.Int32,JW.Data.Entity.UserBook.UserBookEntity)">
+            <summary>
+            根据借书记录id修改借书记录信息
+            </summary>
+            <param name="userBookId"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
         <member name="M:Api.Controllers.User.UserController.AddUser(JW.Data.Entity.User.UserEntity)">
             <summary>
             用户注册
@@ -121,6 +141,12 @@
             </summary>
             <param name="account">账户</param>
             <param name="password">密码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Security.SecurityController.CurrenUser">
+            <summary>
+            获取当前登录用户的信息
+            </summary>
             <returns></returns>
         </member>
     </members>

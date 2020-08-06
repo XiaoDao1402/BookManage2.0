@@ -4,7 +4,9 @@ using JW.Base.Lang;
 using JW.Base.Security;
 using JW.Buss.BLL;
 using JW.Buss.BLL.Admin;
+using JW.Buss.BLL.User;
 using JW.Data.Entity.Admin;
+using JW.Data.Entity.User;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -86,10 +88,12 @@ namespace Api.Controllers {
                 return id;
             }
         }
+
         /// <summary>
-        /// 当前管理员
+        /// 获取当前用户信息
         /// </summary>
-        protected AdminEntity CurrentAdmin => BLL<AdminBLL>().QueryAdminByPrimaryKey(GetCurrentUserId());
+        protected UserEntity CurrentUser => BLL<UserBLL>().QueryUserByPrimaryKey(GetCurrentUserId());
+
         /// <summary>
         /// 获取token
         /// </summary>

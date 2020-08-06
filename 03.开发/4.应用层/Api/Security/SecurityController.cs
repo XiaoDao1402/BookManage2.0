@@ -44,7 +44,6 @@ namespace Api.Security {
                 if (user.Password != password) {
                     return ApiModel.AsErrorResult<LoginModel>(null, $"密码错误");
                 }
-
                 LoginModel loginModel = new LoginModel() {
                     // 把密码字段过滤后返回
                     User = new UserEntity {
@@ -58,6 +57,20 @@ namespace Api.Security {
                     Token = GetJwtToken(new SessionUser() { Id = user.UserId, Name = user.Name })
                 };
                 return ApiModel.AsSuccessResult(loginModel, "登录成功");
+            } catch (Exception ex) {
+                return ApiModel.AsExceptionResult(ex);
+            }
+        }
+
+        /// <summary>
+        /// 获取当前登录用户的信息
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("CurrenUser")]
+        public Task<IActionResult> CurrenUser() {
+            try {
+                UserEntity user = CurrentUser;
+                return ApiModel.AsSuccessResult(user);
             } catch (Exception ex) {
                 return ApiModel.AsExceptionResult(ex);
             }

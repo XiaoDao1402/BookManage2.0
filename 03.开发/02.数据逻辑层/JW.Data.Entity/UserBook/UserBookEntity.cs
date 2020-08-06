@@ -13,8 +13,7 @@ namespace JW.Data.Entity.UserBook
     /// </summary>
     [Name("借书记录实体")]
     [SugarTable("t_user_book")]
-    public class UserBookEntity
-    {
+    public class UserBookEntity {
         /// <summary>
         /// 用户借书id
         /// </summary>
@@ -31,6 +30,11 @@ namespace JW.Data.Entity.UserBook
         public int BookId { get; set; }
 
         /// <summary>
+        /// 状态 1.借书中 2.已还
+        /// </summary>
+        public int State {get;set;  }   
+        
+        /// <summary>
         /// 创建时间
         /// </summary>
         public DateTime CreateDate { get; set; }
@@ -39,6 +43,11 @@ namespace JW.Data.Entity.UserBook
         /// 修改时间
         /// </summary>
         public DateTime ModifyDate { get; set; }
+
+        /// <summary>
+        /// 还书时间
+        /// </summary>
+        public string ReturnDate { get; set; }
 
         /// <summary>
         /// 用户

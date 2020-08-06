@@ -244,6 +244,36 @@
             每页数据条数
             </summary>
         </member>
+        <member name="T:JW.Data.Entity.UserBookReturn.UserBookReturnEntity">
+            <summary>
+            还书记录实体
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.UserBookReturn.UserBookReturnEntity.ReturnId">
+            <summary>
+            还书id
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.UserBookReturn.UserBookReturnEntity.UserId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.UserBookReturn.UserBookReturnEntity.BookId">
+            <summary>
+            图书id
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.UserBookReturn.UserBookReturnEntity.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.UserBookReturn.UserBookReturnEntity.ModifyDate">
+            <summary>
+            修改时间
+            </summary>
+        </member>
         <member name="T:JW.Data.Entity.UserBook.UserBookEntity">
             <summary>
             借书记录实体
@@ -264,6 +294,11 @@
             图书id
             </summary>
         </member>
+        <member name="P:JW.Data.Entity.UserBook.UserBookEntity.State">
+            <summary>
+            状态 1.借书中 2.已还
+            </summary>
+        </member>
         <member name="P:JW.Data.Entity.UserBook.UserBookEntity.CreateDate">
             <summary>
             创建时间
@@ -272,6 +307,11 @@
         <member name="P:JW.Data.Entity.UserBook.UserBookEntity.ModifyDate">
             <summary>
             修改时间
+            </summary>
+        </member>
+        <member name="P:JW.Data.Entity.UserBook.UserBookEntity.ReturnDate">
+            <summary>
+            还书时间
             </summary>
         </member>
         <member name="P:JW.Data.Entity.UserBook.UserBookEntity.User">

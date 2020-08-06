@@ -103,6 +103,27 @@ namespace JW.Buss.BLL.User
                 throw ex;
             }
         }
+
+        /// <summary>
+        /// 根据用户id查询用户信息
+        /// </summary>
+        /// <param name="adminId"></param>
+        /// <returns></returns>
+        public UserEntity QueryUserByPrimaryKey(int userId) {
+            try {
+                UserEntity user = dal.TEntity<UserEntity>()
+                    .AsQueryable()
+                    .Where(it => it.UserId == userId).IgnoreColumns(it=>it.Password)
+                    .First();
+                return user;
+            } catch (Exception) {
+
+                throw;
+            }
+        }
+
+
+
         #endregion
     }
 }
