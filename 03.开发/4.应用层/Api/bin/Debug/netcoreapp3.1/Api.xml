@@ -105,11 +105,34 @@
             <param name="userId"></param>
             <returns></returns>
         </member>
-        <member name="M:Api.Controllers.UserBook.UserBookController.UpdateUserBook(System.Int32,JW.Data.Entity.UserBook.UserBookEntity)">
+        <member name="M:Api.Controllers.UserBook.UserBookController.GetReturnUserBook(System.Int32)">
             <summary>
-            根据借书记录id修改借书记录信息
+            根据用户id查询该用户的还书记录
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UserBook.UserBookController.GetBorrowBook(System.Int32,System.Int32)">
+            <summary>
+            根据图书id查询当前用户是否有借此书
+            </summary>
+            <param name="bookId"></param>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UserBook.UserBookController.UpdateUserBook(System.Int32,System.Int32,JW.Data.Entity.UserBook.UserBookEntity)">
+            <summary>
+            还书
             </summary>
             <param name="userBookId"></param>
+            <param name="bookId"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Api.Controllers.UserBook.UserBookController.AddUserBook(JW.Data.Entity.UserBook.UserBookEntity)">
+            <summary>
+            借书
+            </summary>
             <param name="entity"></param>
             <returns></returns>
         </member>

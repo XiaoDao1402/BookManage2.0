@@ -50,7 +50,7 @@ namespace JW.Buss.BLL.UserBook
 
 
         /// <summary>
-        /// 根据用户id查询该用户的借书记录(小程序API)
+        /// 根据用户id查询该用户的借书记录
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
@@ -69,6 +69,45 @@ namespace JW.Buss.BLL.UserBook
             }
         }
 
+        /// <summary>
+        /// 根据用户id查询该用户的还书记录
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public List<UserBookEntity> GetReturnUserBook(int userId) {
+            try {
+                List<UserBookEntity> list = dal.TEntity<UserBookEntity>()
+                    .AsQueryable()
+                    .Where(it => it.UserId == userId)
+                    .Where(it => it.State == 2)
+                    .Mapper(it => it.User, it => it.UserId)
+                    .Mapper(it => it.Book, it => it.BookId)
+                    .ToList();
+                return list;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// 根据图书id查询当前用户是否有借此书
+        /// </summary>
+        /// <param name="bookId"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public List<UserBookEntity> GetBorrowBook(int bookId, int userId) {
+            try {
+                List<UserBookEntity> list = dal.TEntity<UserBookEntity>()
+                    .AsQueryable()
+                    .Where(it => it.BookId == bookId)
+                    .Where(it => it.UserId == userId)
+                    .Where(it => it.State == 1)
+                    .ToList();
+                return list;
+            } catch (Exception ex) {
+                throw ex;
+            }
+        }
 
         #endregion 
     }
