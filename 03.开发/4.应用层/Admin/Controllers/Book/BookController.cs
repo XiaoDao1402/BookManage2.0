@@ -163,10 +163,10 @@ namespace Admin.Controllers.Book
                 {
                     return ApiModel.AsErrorResult<BookEntity>(null, $"图书不存在");
                 }
-                BookEntity bookName = BLL<BookBLL>().QueryBookByName(entity.Name);
-                if (bookName.IsNotNullOrEmpty()) {
-                    return ApiModel.AsErrorResult<BookEntity>(null, $"该图书名已存在");
-                }
+                //BookEntity bookName = BLL<BookBLL>().QueryBookByName(entity.Name);
+                //if (bookName.IsNotNullOrEmpty()) {
+                //    return ApiModel.AsErrorResult<BookEntity>(null, $"该图书名已存在");
+                //}
                 book.Name = entity.Name ?? string.Empty;
                 book.BookCategoryId = entity.BookCategoryId >= 10000 ? entity.BookCategoryId : 0;
                 book.CoverImage = entity.CoverImage ?? string.Empty;

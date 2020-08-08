@@ -62,6 +62,7 @@ namespace JW.Buss.BLL.UserBook
                     .Where(it=>it.State==1)
                     .Mapper(it => it.User, it => it.UserId)
                     .Mapper(it => it.Book, it => it.BookId)
+                    .OrderBy(it=>it.CreateDate,OrderByType.Desc)
                     .ToList();
                 return list;
             } catch (Exception ex) {
@@ -82,6 +83,7 @@ namespace JW.Buss.BLL.UserBook
                     .Where(it => it.State == 2)
                     .Mapper(it => it.User, it => it.UserId)
                     .Mapper(it => it.Book, it => it.BookId)
+                    .OrderBy(it=>it.ReturnDate,OrderByType.Desc)
                     .ToList();
                 return list;
             } catch (Exception ex) {
